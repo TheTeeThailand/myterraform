@@ -13,13 +13,13 @@ provider "azurerm" {
 
 # Resource Group
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "myresources"
   location = "canadacentral"
 }
 
 # Network Security Group
 resource "azurerm_network_security_group" "example" {
-  name                = "example-nsg"
+  name                = "mynsg"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 
@@ -62,7 +62,7 @@ resource "azurerm_network_security_group" "example" {
 
 # Network Interface
 resource "azurerm_network_interface" "example" {
-  name                      = "example-nic"
+  name                      = "mynic"
   location                  = azurerm_resource_group.example.location
   resource_group_name       = azurerm_resource_group.example.name
 
@@ -75,7 +75,7 @@ resource "azurerm_network_interface" "example" {
 
 # Public IP Address
 resource "azurerm_public_ip" "example" {
-  name                = "example-pip"
+  name                = "mypip"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   allocation_method   = "Dynamic"
@@ -83,7 +83,7 @@ resource "azurerm_public_ip" "example" {
 
 # Virtual Network
 resource "azurerm_virtual_network" "example" {
-  name                = "example-network"
+  name                = "mynetwork"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   address_space       = ["10.0.0.0/16"]

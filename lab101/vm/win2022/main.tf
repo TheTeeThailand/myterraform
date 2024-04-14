@@ -11,12 +11,12 @@ provider "azurerm" {
     features {}
 }
 
-resource "azurerm_resource_group" "dev" {
+resource "azurerm_resource_group" "example" {
     name = "dev"
     location = "canadacentral"
 }
 
-resource "azurerm_storage_account" "storagedev001" {
+resource "azurerm_storage_account" "example" {
   name                     = "devstoragedev001"
   resource_group_name      = "dev"
   location                 = "canadacentral"
